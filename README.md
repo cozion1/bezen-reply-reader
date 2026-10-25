@@ -85,7 +85,7 @@ Developed in Cursor (Cursor Agent CLI used on this repository during the build w
 Requirements: Node 18+, Docker Desktop, a Zetaris Cloud account (for the local bundle), an Anthropic API key.
 
 ```bash
-git clone <this repo> && cd bezen-reply-memory
+git clone https://github.com/cozion1/bezen-reply-reader && cd bezen-reply-reader
 npm install
 npm run setup                    # vendors the Meterless H-MEM reference engine into vendor/
 cp .env.example .env             # fill in Zetaris user/password/org and ANTHROPIC_API_KEY
