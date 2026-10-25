@@ -4,6 +4,8 @@
 
 Open Agent Hackathon 2026 · Wildcard [Tinkerer] track · Team BEZEN (solo: Zion Cohen)
 
+**Demo video (1:25):** https://youtu.be/g9tozgSla08 · **Deck:** [media/BEZEN_Reply_Reader_deck.pdf](media/BEZEN_Reply_Reader_deck.pdf)
+
 ---
 
 ## The five questions
