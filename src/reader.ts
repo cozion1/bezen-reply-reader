@@ -106,8 +106,11 @@ const norm = (s: string) => s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"'
 // Critic: deterministic checks, no model.
 export function critique(row: ReplyRow, r: Reading): string | null {
   const quote = norm(r.evidence).replace(/^["']|["']$/g, "");
+  const reply = norm(row.reply_text);
   if (quote.length < 3) return "evidence is empty";
-  if (!norm(row.reply_text).includes(quote)) return `evidence "${r.evidence}" is not in the reply`;
+  if (quote.split(" ").length < 2) return "evidence is shorter than 2 words"; // "Not interested." is a real two-word reply
+  if (quote.length > reply.length) return "evidence is longer than the reply";
+  if (!reply.includes(quote)) return `evidence "${r.evidence}" is not in the reply`;
   if (r.send === "auto" && ["intrusion", "guilt_or_loss"].includes(r.state)) return `state ${r.state} must not be auto-sent`;
   if (r.send !== "none" && !r.message.trim()) return "send requires a message";
   return null;

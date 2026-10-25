@@ -28,6 +28,11 @@ test("rejects empty evidence", () => {
   assert.match(critique(row, { ...base, evidence: "" }) ?? "", /empty/);
 });
 
+test("rejects evidence longer than the reply or a single word", () => {
+  assert.match(critique(row, { ...base, evidence: "flops" }) ?? "", /shorter than 2 words/);
+  assert.match(critique(row, { ...base, evidence: row.reply_text + " and more" }) ?? "", /longer than the reply/);
+});
+
 test("never auto-sends to an intrusion or guilt state", () => {
   assert.match(critique(row, { ...base, state: "intrusion", send: "auto" }) ?? "", /must not be auto-sent/);
 });

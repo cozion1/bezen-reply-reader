@@ -1,0 +1,36 @@
+{
+  "project": "BEZEN Reply Reader",
+  "team": "BEZEN",
+  "track": "Wildcard [Tinkerer]: Bring Your Own Project",
+  "also_relevant_to": ["Track 02: The Agent That Can Explain Why"],
+  "user": "Sales rep whose outbound bot sorts prospect replies",
+  "sponsors": {
+    "zetaris": {
+      "used": true,
+      "deployment": "local Docker Compose bundle from Zetaris Cloud Gateway",
+      "objects": ["LIGHTNING DATABASE BEZEN_SALES", "LIGHTNING FILESTORE TABLE BEZEN_SALES.leads", "LIGHTNING FILESTORE TABLE BEZEN_SALES.replies"],
+      "access": "UI proxy REST: /api/auth/login, /api/proxy/query/sql/start",
+      "where": ["src/zetaris.ts", "data/zetaris_setup.sql"]
+    },
+    "meterless": {
+      "used": true,
+      "engines": ["hmem"],
+      "services": ["MemoryStoreService", "TrustLedgerService", "retrieval feedback"],
+      "where": ["agent.ts", "src/engine.ts"]
+    },
+    "cursor": {
+      "used": true,
+      "how": "Cursor Agent CLI on this repository during the build window"
+    },
+    "nvidia": {
+      "used": false
+    }
+  },
+  "model": "claude-opus-5-5",
+  "data": "synthetic, no personal data",
+  "existing_components": [
+    "BEZEN reply-reader method (Hebrew skill, ported to English in this build)",
+    "Meterless agentathon-starter template",
+    "Zetaris getting-started helper scripts"
+  ]
+}
