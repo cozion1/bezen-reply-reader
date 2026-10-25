@@ -1,15 +1,19 @@
 {
-  "name": "agentathon-starter",
+  "name": "bezen-reply-reader",
   "version": "0.1.0",
-  "description": "Meterless hackathon starter: a research notebook agent with real H-MEM memory. Zero API keys required.",
+  "description": "Explains why a sales reply needs the answer it gets: Zetaris data, BEZEN pattern layer, H-MEM memory with provenance.",
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "setup": "npx --yes degit meterless/meterless/engines/hmem/reference vendor/hmem && cd vendor/hmem && npm install --no-audit --no-fund",
-    "notebook": "tsx notebook.ts"
+    "agent": "tsx agent.ts",
+    "test": "tsx --test test/critic.test.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
   }
 }

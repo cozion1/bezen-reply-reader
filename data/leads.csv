@@ -1,0 +1,9 @@
+lead_id,company,segment,stage,channel,previous_touches,last_offer
+L001,Harbor Dental,clinic,proposal_sent,email,3,annual plan
+L002,Northwind Logistics,smb,first_contact,cold_email,1,demo call
+L003,Maple Senior Living,senior_care,demo_done,phone,4,pilot month
+L004,Quartz Accounting,smb,proposal_sent,email,2,annual plan
+L005,BrightPath Tutoring,education,first_contact,cold_email,1,demo call
+L006,Cedar & Co Realty,real_estate,negotiation,email,5,discount 10pct
+L007,Lumen Yoga Studio,smb,first_contact,instagram_dm,1,free trial
+L008,Atlas Fitness,smb,demo_done,email,3,pilot month
