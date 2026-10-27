@@ -82,7 +82,22 @@ Zetaris (two file sources)          Claude + BEZEN layer          code critic   
 ### Cursor
 Developed in Cursor (Cursor Agent CLI used on this repository during the build window). See commit history.
 
-## Run it from zero
+## Try it in one minute, no keys
+
+No API key, no Zetaris, no account. This replays the recorded run of 25 Oct 2026 (Zetaris + `claude-opus-5-5`): the report for all eight replies, and the H-MEM trace for two leads, read from the real memory store of that run.
+
+```bash
+git clone https://github.com/cozion1/bezen-reply-reader && cd bezen-reply-reader
+npm install
+npm run setup                    # vendors the Meterless H-MEM engine, no key needed
+npx tsx agent.ts demo            # first line says REPLAY; then report + two traces
+npx tsx agent.ts why L003        # after demo, trace any lead from the recorded memory
+npm test                         # critic tests, no network, no key
+```
+
+The recorded files are in [`demo/`](demo/). `demo` copies them into `.hmem/` and `out/`, so it replaces any local memory from an earlier live run.
+
+## Run it from zero (live)
 
 Requirements: Node 18+, Docker Desktop, a Zetaris Cloud account (for the local bundle), an Anthropic API key.
 

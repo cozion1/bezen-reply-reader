@@ -1,6 +1,7 @@
 // BEZEN Reply Reader: an agent that explains WHY a sales reply needs the answer it gets.
 //
 //   npx tsx agent.ts run              read every reply from Zetaris, explain it, remember it
+//   npx tsx agent.ts demo             replay a captured run (no API key, no Zetaris)
 //   npx tsx agent.ts why <lead_id>    trace a decision: quote, source, confidence, ledger
 //   npx tsx agent.ts approve <mem-id> a human confirms a reading (H-MEM feedback: helpful)
 //   npx tsx agent.ts reject <mem-id>  a human marks a reading wrong (H-MEM feedback: wrong)
@@ -103,11 +104,41 @@ function why(hmem: any, leadId: string): void {
   }
 }
 
+/** Seed live memory + report from the captured fixtures under demo/ (no network). */
+function seedDemo(): void {
+  const demoHmem = path.join(here, "demo", "hmem");
+  const liveHmem = path.join(here, ".hmem");
+  const demoReport = path.join(here, "demo", "report.md");
+  const outDir = path.join(here, "out");
+  if (!fs.existsSync(demoReport) || !fs.existsSync(path.join(demoHmem, "state.json"))) {
+    throw new Error("demo fixtures missing under demo/ (need report.md and hmem/state.json)");
+  }
+  fs.mkdirSync(liveHmem, { recursive: true });
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.copyFileSync(path.join(demoHmem, "state.json"), path.join(liveHmem, "state.json"));
+  fs.copyFileSync(path.join(demoHmem, "ledger.jsonl"), path.join(liveHmem, "ledger.jsonl"));
+  fs.copyFileSync(demoReport, path.join(outDir, "report.md"));
+}
+
+/** Replay a captured run for judges: the recorded report and memory, zero credentials. */
+function demo(hmem: any): void {
+  console.log("REPLAY of a recorded run (2026-10-25, Zetaris + claude-opus-5-5). No API key or Zetaris needed. Live mode: npx tsx agent.ts run\n");
+  const report = fs.readFileSync(path.join(here, "demo", "report.md"), "utf8");
+  for (const line of report.split(/\r?\n/)) if (line.startsWith("|")) console.log(line);
+  for (const lead of ["L008", "L002"]) {
+    console.log(`\n--- why ${lead} ---`);
+    why(hmem, lead);
+  }
+  console.log(`\nFull report: demo/report.md | memory loaded into .hmem/ | trace any lead: npx tsx agent.ts why <lead_id>`);
+}
+
 async function main(): Promise<void> {
   loadDotEnv();
   const [command, arg] = process.argv.slice(2);
+  if (command === "demo") seedDemo();
   const { HMEM, source } = await loadHMEM();
   const hmem = new HMEM({ persistDir: path.join(here, ".hmem") });
+  if (command === "demo") return demo(hmem);
   if (command === "run") return run(hmem);
   if (command === "why" && arg) return why(hmem, arg);
   if ((command === "approve" || command === "reject") && arg) {
@@ -117,6 +148,7 @@ async function main(): Promise<void> {
   }
   console.log(`BEZEN Reply Reader (memory engine: H-MEM, ${source})
   npx tsx agent.ts run
+  npx tsx agent.ts demo
   npx tsx agent.ts why <lead_id>
   npx tsx agent.ts approve|reject <memory-id>`);
 }
