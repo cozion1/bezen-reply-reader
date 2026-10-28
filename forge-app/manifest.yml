@@ -2,7 +2,9 @@ modules:
   rovo:agent:
     - key: bezen-reply-reader
       name: BEZEN Reply Reader
-      description: Reads a customer's reply and says what they are protecting, what not to do now, and whether a bot or a human should answer. Every claim quotes their own words, checked by code.
+      description: Reads a customer's reply and says what they are protecting, what
+        not to do now, and whether a bot or a human should answer. Every claim
+        quotes their own words, checked by code.
       prompt: resource:agent-resource;prompt.txt
       conversationStarters:
         - Read the customer's latest reply on this request
@@ -24,21 +26,22 @@ modules:
           title: Issue key
           type: string
           required: false
-          description: "Key of the request to read, for example SUP-12. Leave empty when the user is viewing the request."
+          description: "Key of the request to read, for example SUP-12. Leave empty when
+            the user is viewing the request."
     - key: check-reading
       name: Check reading
       function: checkReading
       actionVerb: GET
       description: |
-        Submit a reading of the customer's reply to the BEZEN critic. The critic verifies that the evidence is a verbatim
-        quote of the reply and that sensitive states are not auto-answered, logs the decision on the request, and returns
-        pass, rejected (one more try) or escalated (a human must read it).
+        Submit a reading to the BEZEN critic, which checks the evidence is a verbatim quote of the reply and logs
+        the decision. Returns pass, rejected (one more try) or escalated (a human must read it).
       inputs:
         issueKey:
           title: Issue key
           type: string
           required: false
-          description: "Key of the request that was read. Leave empty when the user is viewing the request."
+          description: "Key of the request that was read. Leave empty when the user is
+            viewing the request."
         sort:
           title: Sort
           type: string
@@ -48,7 +51,8 @@ modules:
           title: State
           type: string
           required: true
-          description: "burned_before, intrusion, guilt_or_loss, price_ultimatum, overloaded, career_risk, flat_no, casual_yes or other"
+          description: "burned_before, intrusion, guilt_or_loss, price_ultimatum,
+            overloaded, career_risk, flat_no, casual_yes or other"
         protecting:
           title: Protecting
           type: string
@@ -58,7 +62,8 @@ modules:
           title: Evidence
           type: string
           required: true
-          description: "The exact words from the reply that show it, copied character for character"
+          description: "The exact words from the reply that show it, copied character for
+            character"
         dont:
           title: Do not
           type: string
@@ -68,7 +73,8 @@ modules:
           title: Who answers
           type: string
           required: true
-          description: "auto (a bot may answer), human (a human must answer) or none (nobody answers)"
+          description: "auto (a bot may answer), human (a human must answer) or none
+            (nobody answers)"
         confidence:
           title: Confidence
           type: number
@@ -78,7 +84,8 @@ modules:
           title: Next message
           type: string
           required: false
-          description: "The next message to the customer, 1-3 sentences, or empty when send is none"
+          description: "The next message to the customer, 1-3 sentences, or empty when
+            send is none"
   jira:issuePanel:
     - key: bezen-reply-panel
       resource: panel-resource
@@ -102,7 +109,7 @@ resources:
 app:
   runtime:
     name: nodejs22.x
-  id: ari:cloud:ecosystem::app/00000000-0000-0000-0000-000000000000
+  id: ari:cloud:ecosystem::app/1826110f-f4a8-4611-a9bc-531f8d5c81b2
 permissions:
   scopes:
     - read:jira-work
