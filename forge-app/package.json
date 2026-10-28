@@ -1,0 +1,18 @@
+{
+  "name": "bezen-reply-reader-forge",
+  "version": "0.1.0",
+  "description": "BEZEN Reply Reader as a Rovo agent for Jira Service Management, with a code critic and a reviewed ledger on each request.",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@forge/api": "^8.4.0",
+    "@forge/bridge": "^7.2.1",
+    "@forge/react": "^12.4.0",
+    "@forge/resolver": "^2.0.2",
+    "react": "^18.3.1"
+  }
+}
