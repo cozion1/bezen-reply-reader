@@ -37,7 +37,7 @@ h2 { font-size: 19px; margin: 0; text-wrap: balance; }
 .vo { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
 .en { direction: ltr; text-align: left; font-family: var(--en); font-size: 18px; line-height: 1.55; margin: 0; background: var(--paper); border-inline-start: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; }
 .en { border-left: 3px solid var(--accent); border-right: 0; }
-.tr { color: var(--muted); font-size: 14px; margin: 0; }
+.he { margin: 0; font-size: 21px; line-height: 1.9; }
 .say { margin: 0; font-size: 21px; line-height: 1.9; background: var(--accent-soft); padding: 10px 14px; border-radius: 6px; }
 .say-label { font-size: 12px; letter-spacing: .06em; color: var(--accent); font-weight: 700; }
 button { font: 600 13px var(--he); color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 6px; padding: 4px 10px; cursor: pointer; align-self: flex-start; }
@@ -55,7 +55,7 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
 <div class="wrap" dir="rtl">
   <header>
     <h1>תסריט הסרטון: BEZEN Reply Reader ל-Codegeist</h1>
-    <p class="lede">שמונה שוטים, בערך 3 דקות וחצי. הדרישה היא פחות מ-5 דקות, ביוטיוב, ציבורי. מימין רואים מה להראות על המסך, ומשמאל את הקריינות באנגלית, עם תרגום לעברית מתחת.</p>
+    <p class="lede">שמונה שוטים, בערך 3 דקות וחצי. הדרישה היא פחות מ-5 דקות, ביוטיוב, ציבורי. מימין רואים מה להראות על המסך, ומשמאל הקריינות בשלוש שורות: המשמעות בעברית מנוקדת, ההגייה של האנגלית באותיות עבריות, והאנגלית עצמה.</p>
     <div class="meta">
       <span class="chip">~3:25</span><span class="chip">one-atlas-kpcn.atlassian.net</span><span class="chip">CLSD-6 · CLSD-7 · CLSD-8</span>
     </div>
@@ -68,6 +68,7 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <li>לסגור בועות הסבר ואת הכפתור של AliExpress בצד המסך. אם אפשר, להגדיל את הדפדפן ל-110% (<code>Ctrl +</code>).</li>
       <li>להקליט ב-<b>Loom</b>. הוא כבר מובנה באתר, בתפריט משמאל. אפשר גם <code>Win + Alt + R</code> של Windows.</li>
       <li>את ההמתנה לתשובה של Rovo (כמה שניות) חותכים בעריכה, או שמקליטים קריינות בנפרד ומדביקים מעל.</li>
+      <li><b>כדי שהקול לא יהיה מונוטוני:</b> קודם קוראים בקול את השורה בעברית, עם הרגש שלה. אחר כך אומרים את ההגייה באנגלית באותה מנגינה בדיוק.</li>
       <li><b>איך לקרוא את שורת ההגייה:</b> הקו <b>/</b> הוא עצירה קצרה, והקו <b>//</b> הוא נשימה. ת' נשמע כמו th במילה think, וד' כמו th במילה the. ו' היא w, ו-ב' היא v.</li>
       <li>לא חייבים להקליט הכול ברצף. אפשר שוט אחד בכל פעם, ולהקליט שוב רק את מה שלא יצא טוב.</li>
     </ol>
@@ -84,18 +85,20 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <div class="tc"><b>1 · הבעיה</b>0:00–0:20</div>
       <div class="screen"><span class="label">על המסך</span>
         <p>התור <b>All open</b> במרחב Commercial Legal Service Desk. רואים את שלוש הבקשות, CLSD-6, 7 ו-8, אחת מתחת לשנייה.</p></div>
-      <div class="vo"><p class="en">Every support queue sorts replies the same way: yes, no, or question. But three short replies can hide three very different people. A bot that answers the words, and not the person, loses them.</p>
-        <span class="say-label">הגייה</span><p class="say">אֶבְרִי סַפּוֹרְט קְיוּ / סוֹרְטְס רִיפְּלַייז דֶ'ה סֵיים וֵויי: / יֶס, נוֹ, אוֹר קְוֶוסְצ'ֶן. // בַּט ת'ְרִי שׁוֹרְט רִיפְּלַייז / קֶן הַייד / ת'ְרִי וֶרִי דִּיפְרֶנְט פִּיפֶּל. // אֶ בּוֹט דֶ'ט אֶנְסֶרְז דֶ'ה וֶורְדְז, / אֶנְד נוֹט דֶ'ה פֶּרְסֶן, / לוּזֶז דֶ'ם.</p>
-        <p class="tr">כל תור תמיכה ממיין תשובות אותו דבר: כן, לא, או שאלה. אבל שלוש תשובות קצרות יכולות להסתיר שלושה אנשים שונים מאוד. בוט שעונה למילים ולא לאדם מאבד אותם.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">כָּל תּוֹר תְּמִיכָה מְמַיֵּן תְּשׁוּבוֹת אוֹתוֹ דָּבָר: כֵּן, לֹא, אוֹ שְׁאֵלָה. אֲבָל שָׁלוֹשׁ תְּשׁוּבוֹת קְצָרוֹת יְכוֹלוֹת לְהַסְתִּיר שְׁלוֹשָׁה אֲנָשִׁים שׁוֹנִים מְאוֹד. בּוֹט שֶׁעוֹנֶה לַמִּלִּים, וְלֹא לָאָדָם, מְאַבֵּד אוֹתָם.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">אֶבְרִי סַפּוֹרְט קְיוּ / סוֹרְטְס רִיפְּלַייז דֶ'ה סֵיים וֵויי: / יֶס, נוֹ, אוֹר קְוֶוסְצ'ֶן. // בַּט ת'ְרִי שׁוֹרְט רִיפְּלַייז / קֶן הַייד / ת'ְרִי וֶרִי דִּיפְרֶנְט פִּיפֶּל. // אֶ בּוֹט דֶ'ט אֶנְסֶרְז דֶ'ה וֶורְדְז, / אֶנְד נוֹט דֶ'ה פֶּרְסֶן, / לוּזֶז דֶ'ם.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">Every support queue sorts replies the same way: yes, no, or question. But three short replies can hide three very different people. A bot that answers the words, and not the person, loses them.</p></div>
     </article>
 
     <article class="shot">
       <div class="tc"><b>2 · הסוכן</b>0:20–0:35</div>
       <div class="screen"><span class="label">על המסך</span>
         <p>לוחצים <b>Ask Rovo</b>, אחר כך <b>Rovo ˅</b>, ובוחרים <b>BEZEN Reply Reader</b>. רואים את מסך הפתיחה שלו.</p></div>
-      <div class="vo"><p class="en">BEZEN Reply Reader is a Rovo agent built on Forge. It reads the customer's reply on a Jira Service Management request, and says what they are protecting, what not to do now, and whether a bot or a human should answer.</p>
-        <span class="say-label">הגייה</span><p class="say">בֶּזֶן רִיפְּלַיי רִידֶר / אִיז אֶ רוֹבוֹ אֵייגֶ'נְט / בִּילְט אוֹן פוֹרְג'. // אִיט רִידְז דֶ'ה קַסְטֶמֶרְז רִיפְּלַיי / אוֹן אֶ גִ'ירָה סֶרְבִיס מֶנֶג'מֶנְט רִיקְוֶוסְט, // אֶנְד סֶז / ווֹט דֵ'יי אָר פְּרוֹטֶקְטִינְג, / ווֹט נוֹט טוּ דוּ נַאוּ, / אֶנְד וֶדֶ'ר אֶ בּוֹט אוֹר אֶ הְיוּמֶן / שׁוּד אֶנְסֶר.</p>
-        <p class="tr">BEZEN Reply Reader הוא סוכן Rovo שבנוי על Forge. הוא קורא את התשובה של הלקוח בבקשה ב-Jira Service Management, ואומר על מה הלקוח מגן, מה אסור לעשות עכשיו, והאם בוט או בן אדם צריך לענות.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">BEZEN Reply Reader הוּא סוֹכֵן Rovo שֶׁבָּנוּי עַל Forge. הוּא קוֹרֵא אֶת הַתְּשׁוּבָה שֶׁל הַלָּקוֹחַ בְּבַקָּשָׁה בְּ-Jira Service Management, וְאוֹמֵר עַל מָה הַלָּקוֹחַ מֵגֵן, מָה אָסוּר לַעֲשׂוֹת עַכְשָׁו, וְהַאִם בּוֹט אוֹ בֶּן אָדָם צָרִיךְ לַעֲנוֹת.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">בֶּזֶן רִיפְּלַיי רִידֶר / אִיז אֶ רוֹבוֹ אֵייגֶ'נְט / בִּילְט אוֹן פוֹרְג'. // אִיט רִידְז דֶ'ה קַסְטֶמֶרְז רִיפְּלַיי / אוֹן אֶ גִ'ירָה סֶרְבִיס מֶנֶג'מֶנְט רִיקְוֶוסְט, // אֶנְד סֶז / ווֹט דֵ'יי אָר פְּרוֹטֶקְטִינְג, / ווֹט נוֹט טוּ דוּ נַאוּ, / אֶנְד וֶדֶ'ר אֶ בּוֹט אוֹר אֶ הְיוּמֶן / שׁוּד אֶנְסֶר.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">BEZEN Reply Reader is a Rovo agent built on Forge. It reads the customer's reply on a Jira Service Management request, and says what they are protecting, what not to do now, and whether a bot or a human should answer.</p></div>
     </article>
 
     <article class="shot">
@@ -103,9 +106,10 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <div class="screen"><span class="label">על המסך</span>
         <p>פותחים את <b>CLSD-6</b> ומראים את התיאור. ב-Rovo מקלידים <code>Read the customer's latest reply on CLSD-6</code> ומחכים לקריאה.</p>
         <p class="cue">לעצור רגע על השורות "Their words" ו-"Who answers: a human must".</p></div>
-      <div class="vo"><p class="en">Here a customer asks where we got their email. A normal triage sees a question and keeps selling. The agent reads intrusion: this person is protecting their privacy. It quotes their exact words, says stop the pitch, and routes the reply to a human.</p>
-        <span class="say-label">הגייה</span><p class="say">הִיר / אֶ קַסְטֶמֶר אַסְקְס / וֶור וִי גוֹט דֶ'יר אִימֵייל. // אֶ נוֹרְמֶל טְרִי-אָאז' / סִיז אֶ קְוֶוסְצ'ֶן / אֶנְד קִיפְּס סֶלִינְג. // דִ'י אֵייגֶ'נְט רִידְז / אִינְטְרוּז'ֶן: / דִ'יס פֶּרְסֶן / אִיז פְּרוֹטֶקְטִינְג דֶ'יר פְּרַייבֶסִי. // אִיט קְווֹאוּטְס דֶ'יר אֶגְזַקְט וֶורְדְז, / סֶז סְטוֹפּ דֶ'ה פִּיץ', / אֶנְד רָאוּטְס דֶ'ה רִיפְּלַיי / טוּ אֶ הְיוּמֶן.</p>
-        <p class="tr">כאן לקוח שואל מאיפה השגנו את המייל שלו. מיון רגיל רואה שאלה וממשיך למכור. הסוכן מזהה חדירה: האדם מגן על הפרטיות שלו. הוא מצטט את המילים המדויקות שלו, אומר לעצור את המכירה, ומעביר לבן אדם.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">כָּאן לָקוֹחַ שׁוֹאֵל מֵאֵיפֹה הִשַּׂגְנוּ אֶת הַמֵּייל שֶׁלּוֹ. מִיּוּן רָגִיל רוֹאֶה שְׁאֵלָה, וּמַמְשִׁיךְ לִמְכֹּר. הַסּוֹכֵן מְזַהֶה חֲדִירָה: הָאָדָם הַזֶּה מֵגֵן עַל הַפְּרָטִיּוּת שֶׁלּוֹ. הוּא מְצַטֵּט אֶת הַמִּלִּים הַמְּדֻיָּקוֹת שֶׁלּוֹ, אוֹמֵר לַעֲצֹר אֶת הַמְּכִירָה, וּמַעֲבִיר אֶת הַתְּשׁוּבָה לְבֶן אָדָם.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">הִיר / אֶ קַסְטֶמֶר אַסְקְס / וֶור וִי גוֹט דֶ'יר אִימֵייל. // אֶ נוֹרְמֶל טְרִי-אָאז' / סִיז אֶ קְוֶוסְצ'ֶן / אֶנְד קִיפְּס סֶלִינְג. // דִ'י אֵייגֶ'נְט רִידְז / אִינְטְרוּז'ֶן: / דִ'יס פֶּרְסֶן / אִיז פְּרוֹטֶקְטִינְג דֶ'יר פְּרַייבֶסִי. // אִיט קְווֹאוּטְס דֶ'יר אֶגְזַקְט וֶורְדְז, / סֶז סְטוֹפּ דֶ'ה פִּיץ', / אֶנְד רָאוּטְס דֶ'ה רִיפְּלַיי / טוּ אֶ הְיוּמֶן.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">Here a customer asks where we got their email. A normal triage sees a question and keeps selling. The agent reads intrusion: this person is protecting their privacy. It quotes their exact words, says stop the pitch, and routes the reply to a human.</p></div>
     </article>
 
     <article class="shot">
@@ -113,9 +117,10 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <div class="screen"><span class="label">על המסך</span>
         <p>שיחה חדשה (סמל העיפרון), ואחריה <code>Read the customer's latest reply on CLSD-7</code>.</p>
         <p class="cue">להדגיש את "Protecting: their internal reputation".</p></div>
-      <div class="vo"><p class="en">This one sounds like a question about timelines. The agent sees someone who championed the deal and is afraid of their boss. The right answer lowers their personal risk: a clear timeline and a fallback plan.</p>
-        <span class="say-label">הגייה</span><p class="say">דִ'יס וַואן / סָאוּנְדְז לַייק אֶ קְוֶוסְצ'ֶן / אֶבָּאוּט טַיימְלַיינְז. // דִ'י אֵייגֶ'נְט סִיז סַאמְוַואן / הוּ צֶ'מְפְּיֶנְד דֶ'ה דִיל / אֶנְד אִיז אֶפְרֵייד אוֹף דֶ'יר בּוֹס. // דֶ'ה רַייט אֶנְסֶר / לוֹאוּאֶרְז דֶ'יר פֶּרְסֶנֶל רִיסְק: / אֶ קְלִיר טַיימְלַיין / אֶנְד אֶ פוֹלְבֶּק פְּלֶן.</p>
-        <p class="tr">זו נשמעת כמו שאלה על לוחות זמנים. הסוכן רואה מישהו שדחף לעסקה ופוחד מהבוס שלו. התשובה הנכונה מורידה ממנו את הסיכון האישי: לוח זמנים ברור ותוכנית גיבוי.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">זוֹ נִשְׁמַעַת כְּמוֹ שְׁאֵלָה עַל לוּחוֹת זְמַנִּים. הַסּוֹכֵן רוֹאֶה מִישֶׁהוּ שֶׁדָּחַף לָעִסְקָה, וּפוֹחֵד מֵהַבּוֹס שֶׁלּוֹ. הַתְּשׁוּבָה הַנְּכוֹנָה מוֹרִידָה מִמֶּנּוּ אֶת הַסִּכּוּן הָאִישִׁי: לוּחַ זְמַנִּים בָּרוּר, וְתָכְנִית גִּבּוּי.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">דִ'יס וַואן / סָאוּנְדְז לַייק אֶ קְוֶוסְצ'ֶן / אֶבָּאוּט טַיימְלַיינְז. // דִ'י אֵייגֶ'נְט סִיז סַאמְוַואן / הוּ צֶ'מְפְּיֶנְד דֶ'ה דִיל / אֶנְד אִיז אֶפְרֵייד אוֹף דֶ'יר בּוֹס. // דֶ'ה רַייט אֶנְסֶר / לוֹאוּאֶרְז דֶ'יר פֶּרְסֶנֶל רִיסְק: / אֶ קְלִיר טַיימְלַיין / אֶנְד אֶ פוֹלְבֶּק פְּלֶן.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">This one sounds like a question about timelines. The agent sees someone who championed the deal and is afraid of their boss. The right answer lowers their personal risk: a clear timeline and a fallback plan.</p></div>
     </article>
 
     <article class="shot">
@@ -123,9 +128,10 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <div class="screen"><span class="label">על המסך</span>
         <p>שיחה חדשה, ואחריה <code>Read the customer's latest reply on CLSD-8</code>.</p>
         <p class="cue">להדגיש את "Who answers: a bot may".</p></div>
-      <div class="vo"><p class="en">And here it does the opposite. A simple yes. There is nothing to protect except momentum, so a bot may answer with one concrete next step. The agent is not just cautious. It reads.</p>
-        <span class="say-label">הגייה</span><p class="say">אֶנְד הִיר / אִיט דַאז דִ'י אוֹפּוֹזִיט. // אֶ סִימְפֶּל יֶס. // דֶ'יר אִיז נַאת'ִינְג טוּ פְּרוֹטֶקְט / אֶקְסֶפְּט מוֹמֶנְטֶם, / סוֹ אֶ בּוֹט מֵיי אֶנְסֶר / וִיד' וַואן קוֹנְקְרִיט נֶקְסְט סְטֶפּ. // דִ'י אֵייגֶ'נְט / אִיז נוֹט גַ'אסְט קוֹשֶׁס. // אִיט רִידְז.</p>
-        <p class="tr">וכאן הוא עושה את ההפך. "כן" פשוט. אין על מה להגן חוץ מהתנופה, ולכן בוט רשאי לענות עם צעד הבא אחד ברור. הסוכן לא סתם זהיר. הוא קורא.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">וְכָאן הוּא עוֹשֶׂה אֶת הַהֵפֶךְ. "כֵּן" פָּשׁוּט. אֵין עַל מָה לְהָגֵן חוּץ מֵהַתְּנוּפָה, וְלָכֵן בּוֹט רַשַּׁאי לַעֲנוֹת, עִם צַעַד אֶחָד בָּרוּר קָדִימָה. הַסּוֹכֵן לֹא סְתָם זָהִיר. הוּא קוֹרֵא.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">אֶנְד הִיר / אִיט דַאז דִ'י אוֹפּוֹזִיט. // אֶ סִימְפֶּל יֶס. // דֶ'יר אִיז נַאת'ִינְג טוּ פְּרוֹטֶקְט / אֶקְסֶפְּט מוֹמֶנְטֶם, / סוֹ אֶ בּוֹט מֵיי אֶנְסֶר / וִיד' וַואן קוֹנְקְרִיט נֶקְסְט סְטֶפּ. // דִ'י אֵייגֶ'נְט / אִיז נוֹט גַ'אסְט קוֹשֶׁס. // אִיט רִידְז.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">And here it does the opposite. A simple yes. There is nothing to protect except momentum, so a bot may answer with one concrete next step. The agent is not just cautious. It reads.</p></div>
     </article>
 
     <article class="shot">
@@ -133,27 +139,30 @@ code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: 
       <div class="screen"><span class="label">על המסך</span>
         <p>בבקשה CLSD-6 פותחים את הפאנל <b>BEZEN Reply Reader</b> (המשולש הכחול מתחת לכותרת). מראים את התווית <b>critic: pass</b>, ואז לוחצים <b>Confirm reading</b>, והתווית הופכת ל-<b>confirmed</b>.</p>
         <p class="cue">לא חובה: שנייה של VS Code עם <code>npm test</code> ו-6 בדיקות שעוברות.</p></div>
-      <div class="vo"><p class="en">Models invent quotes, so this agent never grades itself. Every reading goes to a critic written in code, not a model. The critic fetches the reply from Jira on its own, and rejects any quote that is not there word for word, and any sensitive case marked for an automatic answer. One retry, then a human. Every decision is logged on the request, and the person on the team confirms or rejects it right here.</p>
-        <span class="say-label">הגייה</span><p class="say">מוֹדֶלְז אִינְבֶנְט קְווֹאוּטְס, / סוֹ דִ'יס אֵייגֶ'נְט / נֶבֶר גְרֵיידְז אִיטְסֶלְף. // אֶבְרִי רִידִינְג / גוֹאוּז טוּ אֶ קְרִיטִיק / רִיטֶן אִין קוֹאוּד, / נוֹט אֶ מוֹדֶל. // דֶ'ה קְרִיטִיק / פֶצֶ'ז דֶ'ה רִיפְּלַיי פְרוֹם גִ'ירָה / אוֹן אִיטְס אוֹאוּן, // אֶנְד רִיגֶ'קְטְס / אֶנִי קְווֹאוּט דֶ'ט אִיז נוֹט דֶ'יר / וֶורְד פוֹר וֶורְד, / אֶנְד אֶנִי סֶנְסִיטִיב קֵייס / מַארְקְט פוֹר אֶן אוֹטוֹמֶטִיק אֶנְסֶר. // וַואן רִיטְרַיי, / דֶ'ן אֶ הְיוּמֶן. // אֶבְרִי דִיסִיז'ֶן / אִיז לוֹגְד אוֹן דֶ'ה רִיקְוֶוסְט, / אֶנְד דֶ'ה פֶּרְסֶן אוֹן דֶ'ה טִים / קוֹנְפֶרְמְז אוֹר רִיגֶ'קְטְס אִיט / רַייט הִיר.</p>
-        <p class="tr">מודלים ממציאים ציטוטים, ולכן הסוכן הזה אף פעם לא בודק את עצמו. כל קריאה עוברת למבקר שכתוב בקוד, לא במודל. המבקר שולף בעצמו את התשובה מ-Jira, ופוסל כל ציטוט שלא מופיע בה מילה במילה, וכל מקרה רגיש שסומן לתשובה אוטומטית. ניסיון חוזר אחד, ואחריו בן אדם. כל החלטה נרשמת על הבקשה, ואיש הצוות מאשר או דוחה אותה כאן.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">מוֹדֶלִים מַמְצִיאִים צִיטוּטִים, וְלָכֵן הַסּוֹכֵן הַזֶּה אַף פַּעַם לֹא בּוֹדֵק אֶת עַצְמוֹ. כָּל קְרִיאָה עוֹבֶרֶת לִמְבַקֵּר שֶׁכָּתוּב בְּקוֹד, לֹא בְּמוֹדֶל. הַמְּבַקֵּר שׁוֹלֵף בְּעַצְמוֹ אֶת הַתְּשׁוּבָה מִ-Jira, וּפוֹסֵל כָּל צִיטוּט שֶׁלֹּא מוֹפִיעַ בָּהּ מִלָּה בְּמִלָּה, וְכָל מִקְרֶה רָגִישׁ שֶׁסֻּמַּן לִתְשׁוּבָה אוֹטוֹמָטִית. נִסָּיוֹן חוֹזֵר אֶחָד, וְאַחֲרָיו בֶּן אָדָם. כָּל הַחְלָטָה נִרְשֶׁמֶת עַל הַבַּקָּשָׁה, וְאִישׁ הַצֶּוֶת מְאַשֵּׁר אוֹ דּוֹחֶה אוֹתָהּ, מַמָּשׁ כָּאן.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">מוֹדֶלְז אִינְבֶנְט קְווֹאוּטְס, / סוֹ דִ'יס אֵייגֶ'נְט / נֶבֶר גְרֵיידְז אִיטְסֶלְף. // אֶבְרִי רִידִינְג / גוֹאוּז טוּ אֶ קְרִיטִיק / רִיטֶן אִין קוֹאוּד, / נוֹט אֶ מוֹדֶל. // דֶ'ה קְרִיטִיק / פֶצֶ'ז דֶ'ה רִיפְּלַיי פְרוֹם גִ'ירָה / אוֹן אִיטְס אוֹאוּן, // אֶנְד רִיגֶ'קְטְס / אֶנִי קְווֹאוּט דֶ'ט אִיז נוֹט דֶ'יר / וֶורְד פוֹר וֶורְד, / אֶנְד אֶנִי סֶנְסִיטִיב קֵייס / מַארְקְט פוֹר אֶן אוֹטוֹמֶטִיק אֶנְסֶר. // וַואן רִיטְרַיי, / דֶ'ן אֶ הְיוּמֶן. // אֶבְרִי דִיסִיז'ֶן / אִיז לוֹגְד אוֹן דֶ'ה רִיקְוֶוסְט, / אֶנְד דֶ'ה פֶּרְסֶן אוֹן דֶ'ה טִים / קוֹנְפֶרְמְז אוֹר רִיגֶ'קְטְס אִיט / רַייט הִיר.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">Models invent quotes, so this agent never grades itself. Every reading goes to a critic written in code, not a model. The critic fetches the reply from Jira on its own, and rejects any quote that is not there word for word, and any sensitive case marked for an automatic answer. One retry, then a human. Every decision is logged on the request, and the person on the team confirms or rejects it right here.</p></div>
     </article>
 
     <article class="shot">
       <div class="tc"><b>7 · איך נבנה</b>2:45–3:10</div>
       <div class="screen"><span class="label">על המסך</span>
         <p>הקובץ <code>manifest.yml</code> ב-VS Code: גוללים לאט על <code>rovo:agent</code>, על שתי ה-<code>action</code>, ועל <code>jira:issuePanel</code>.</p></div>
-      <div class="vo"><p class="en">It is built entirely on Forge: a Rovo agent with the BEZEN pattern layer as its prompt, two actions, get customer reply and check reading, an issue property as the ledger, and a UI Kit issue panel. The agent never posts to the customer itself.</p>
-        <span class="say-label">הגייה</span><p class="say">אִיט אִיז בִּילְט / אֶנְטַיירְלִי אוֹן פוֹרְג': // אֶ רוֹבוֹ אֵייגֶ'נְט / וִיד' דֶ'ה בֶּזֶן פֶּטֶרְן לֵייֶר / אֶז אִיטְס פְּרוֹמְפְּט, // טוּ אֶקְשֶׁנְז, / גֶט קַסְטֶמֶר רִיפְּלַיי / אֶנְד צֶ'ק רִידִינְג, // אֶן אִישׁוּ פְּרוֹפֶּרְטִי / אֶז דֶ'ה לֶדְג'ֶר, // אֶנְד אֶ יוּ-אַיי קִיט / אִישׁוּ פֶּנֶל. // דִ'י אֵייגֶ'נְט / נֶבֶר פּוֹאוּסְטְס טוּ דֶ'ה קַסְטֶמֶר / אִיטְסֶלְף.</p>
-        <p class="tr">הכול בנוי על Forge: סוכן Rovo ששכבת הדפוסים של BEZEN היא ההנחיה שלו, שתי פעולות (שליפת התשובה ובדיקת הקריאה), מאפיין של הבקשה שמשמש כרשומה, ופאנל UI Kit בבקשה. הסוכן אף פעם לא כותב ללקוח בעצמו.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">הַכֹּל בָּנוּי עַל Forge: סוֹכֵן Rovo, שֶׁשִּׁכְבַת הַדְּפוּסִים שֶׁל BEZEN הִיא הַהַנְחָיָה שֶׁלּוֹ; שְׁתֵּי פְּעֻלּוֹת, שְׁלִיפַת הַתְּשׁוּבָה וּבְדִיקַת הַקְּרִיאָה; מְאַפְיֵן שֶׁל הַבַּקָּשָׁה שֶׁמְּשַׁמֵּשׁ כִּרְשׁוּמָה; וּפָּאנֶל UI Kit בַּבַּקָּשָׁה. הַסּוֹכֵן אַף פַּעַם לֹא כּוֹתֵב לַלָּקוֹחַ בְּעַצְמוֹ.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">אִיט אִיז בִּילְט / אֶנְטַיירְלִי אוֹן פוֹרְג': // אֶ רוֹבוֹ אֵייגֶ'נְט / וִיד' דֶ'ה בֶּזֶן פֶּטֶרְן לֵייֶר / אֶז אִיטְס פְּרוֹמְפְּט, // טוּ אֶקְשֶׁנְז, / גֶט קַסְטֶמֶר רִיפְּלַיי / אֶנְד צֶ'ק רִידִינְג, // אֶן אִישׁוּ פְּרוֹפֶּרְטִי / אֶז דֶ'ה לֶדְג'ֶר, // אֶנְד אֶ יוּ-אַיי קִיט / אִישׁוּ פֶּנֶל. // דִ'י אֵייגֶ'נְט / נֶבֶר פּוֹאוּסְטְס טוּ דֶ'ה קַסְטֶמֶר / אִיטְסֶלְף.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">It is built entirely on Forge: a Rovo agent with the BEZEN pattern layer as its prompt, two actions, get customer reply and check reading, an issue property as the ledger, and a UI Kit issue panel. The agent never posts to the customer itself.</p></div>
     </article>
 
     <article class="shot">
       <div class="tc"><b>8 · סיום</b>3:10–3:25</div>
       <div class="screen"><span class="label">על המסך</span>
         <p>חוזרים לתור עם שלוש הבקשות, או לפאנל עם התווית confirmed. בשניות האחרונות מופיע שם הפרויקט.</p></div>
-      <div class="vo"><p class="en">Support teams lose good customers by giving the right words to the wrong person. BEZEN Reply Reader reads the person first, and proves it with their own words.</p>
-        <span class="say-label">הגייה</span><p class="say">סַפּוֹרְט טִימְז / לוּז גוּד קַסְטֶמֶרְז / בַּאי גִיבִינְג דֶ'ה רַייט וֶורְדְז / טוּ דֶ'ה רוֹנְג פֶּרְסֶן. // בֶּזֶן רִיפְּלַיי רִידֶר / רִידְז דֶ'ה פֶּרְסֶן פֶרְסְט, / אֶנְד פְּרוּבְז אִיט / וִיד' דֶ'יר אוֹאוּן וֶורְדְז.</p>
-        <p class="tr">צוותי תמיכה מאבדים לקוחות טובים כשהם נותנים את המילים הנכונות לאדם הלא נכון. BEZEN Reply Reader קורא קודם את האדם, ומוכיח את זה במילים שלו עצמו.</p></div>
+      <div class="vo">
+        <span class="say-label">1 · מה אומרים, בעברית</span><p class="he">צֶוְתֵי תְּמִיכָה מְאַבְּדִים לָקוֹחוֹת טוֹבִים, כְּשֶׁהֵם נוֹתְנִים אֶת הַמִּלִּים הַנְּכוֹנוֹת לָאָדָם הַלֹּא נָכוֹן. BEZEN Reply Reader קוֹרֵא קֹדֶם אֶת הָאָדָם, וּמוֹכִיחַ אֶת זֶה בַּמִּלִּים שֶׁלּוֹ עַצְמוֹ.</p>
+        <span class="say-label">2 · איך זה נשמע באנגלית</span><p class="say">סַפּוֹרְט טִימְז / לוּז גוּד קַסְטֶמֶרְז / בַּאי גִיבִינְג דֶ'ה רַייט וֶורְדְז / טוּ דֶ'ה רוֹנְג פֶּרְסֶן. // בֶּזֶן רִיפְּלַיי רִידֶר / רִידְז דֶ'ה פֶּרְסֶן פֶרְסְט, / אֶנְד פְּרוּבְז אִיט / וִיד' דֶ'יר אוֹאוּן וֶורְדְז.</p>
+        <span class="say-label">3 · אנגלית</span><p class="en">Support teams lose good customers by giving the right words to the wrong person. BEZEN Reply Reader reads the person first, and proves it with their own words.</p></div>
     </article>
   </div>
 
