@@ -1,0 +1,170 @@
+<title>תסריט סרטון Codegeist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;600;700&family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap">
+<style>
+/* Layout: a shooting script. Each shot is a row: timecode rail | what's on screen (Hebrew) | narration (English + Hebrew). */
+:root {
+  --bg: #f6f7f5; --paper: #ffffff; --ink: #1d2422; --muted: #5d6a66; --line: #dfe4e1;
+  --accent: #0f766e; --accent-soft: #e2f1ee; --cue: #9a5b00;
+  --he: "IBM Plex Sans Hebrew", "Segoe UI", Arial, sans-serif;
+  --en: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121615; --paper: #1a201e; --ink: #e7ecea; --muted: #9aa7a3; --line: #2c3532;
+  --accent: #4fc2b4; --accent-soft: #1d3330; --cue: #e3a64a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121615; --paper: #1a201e; --ink: #e7ecea; --muted: #9aa7a3; --line: #2c3532;
+  --accent: #4fc2b4; --accent-soft: #1d3330; --cue: #e3a64a; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--he); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px; }
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1 { font-size: 30px; line-height: 1.2; margin: 0; text-wrap: balance; }
+h2 { font-size: 19px; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 6px 0 0; max-width: 65ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { font-family: var(--mono); font-size: 13px; background: var(--accent-soft); color: var(--accent); padding: 3px 10px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.box { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.box ol, .box ul { margin: 0; padding-inline-start: 22px; display: flex; flex-direction: column; gap: 4px; }
+.shots { display: flex; flex-direction: column; border-top: 2px solid var(--ink); }
+.shot { display: grid; grid-template-columns: 96px minmax(0, 1fr) minmax(0, 1.35fr); gap: 20px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-variant-numeric: tabular-nums; display: flex; flex-direction: column; gap: 2px; }
+.tc b { color: var(--ink); font-family: var(--he); font-size: 15px; }
+.screen { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 12px; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.screen p { margin: 0; }
+.cue { color: var(--cue); font-size: 14px; }
+.vo { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.en { direction: ltr; text-align: left; font-family: var(--en); font-size: 18px; line-height: 1.55; margin: 0; background: var(--paper); border-inline-start: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; }
+.en { border-left: 3px solid var(--accent); border-right: 0; }
+.tr { color: var(--muted); font-size: 14px; margin: 0; }
+button { font: 600 13px var(--he); color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 6px; padding: 4px 10px; cursor: pointer; align-self: flex-start; }
+button:hover { background: var(--accent-soft); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.top { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: flex-end; }
+code { font-family: var(--mono); font-size: 14px; direction: ltr; unicode-bidi: isolate; }
+@media (max-width: 760px) {
+  .shot { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .tc { flex-direction: row; gap: 10px; align-items: baseline; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap" dir="rtl">
+  <header>
+    <h1>תסריט הסרטון: BEZEN Reply Reader ל-Codegeist</h1>
+    <p class="lede">שמונה שוטים, בערך 3 דקות וחצי. הדרישה היא פחות מ-5 דקות, ביוטיוב, ציבורי. מימין רואים מה להראות על המסך, ומשמאל את הקריינות באנגלית, עם תרגום לעברית מתחת.</p>
+    <div class="meta">
+      <span class="chip">~3:25</span><span class="chip">one-atlas-kpcn.atlassian.net</span><span class="chip">CLSD-6 · CLSD-7 · CLSD-8</span>
+    </div>
+  </header>
+
+  <section class="box">
+    <h2>לפני שמקליטים</h2>
+    <ol>
+      <li>בכל אחת מהבקשות CLSD-6, CLSD-7 ו-CLSD-8 כבר יש קריאה בפאנל. לא לאשר אותן מראש, כי את הלחיצה על <b>Confirm reading</b> מראים בסרטון.</li>
+      <li>לסגור בועות הסבר ואת הכפתור של AliExpress בצד המסך. אם אפשר, להגדיל את הדפדפן ל-110% (<code>Ctrl +</code>).</li>
+      <li>להקליט ב-<b>Loom</b>. הוא כבר מובנה באתר, בתפריט משמאל. אפשר גם <code>Win + Alt + R</code> של Windows.</li>
+      <li>את ההמתנה לתשובה של Rovo (כמה שניות) חותכים בעריכה, או שמקליטים קריינות בנפרד ומדביקים מעל.</li>
+      <li>אם לא נוח לך לקרוא באנגלית: מקליטים בלי קול, ואת הקריינות מוסיפים אחר כך כקול AI או ככתוביות.</li>
+    </ol>
+  </section>
+
+  <div class="top">
+    <h2>השוטים</h2>
+    <button type="button" id="copy-all">העתק את כל הקריינות</button>
+  </div>
+
+  <div class="shots" id="shots">
+
+    <article class="shot">
+      <div class="tc"><b>1 · הבעיה</b>0:00–0:20</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>התור <b>All open</b> במרחב Commercial Legal Service Desk. רואים את שלוש הבקשות, CLSD-6, 7 ו-8, אחת מתחת לשנייה.</p></div>
+      <div class="vo"><p class="en">Every support queue sorts replies the same way: yes, no, or question. But three short replies can hide three very different people. A bot that answers the words, and not the person, loses them.</p>
+        <p class="tr">כל תור תמיכה ממיין תשובות אותו דבר: כן, לא, או שאלה. אבל שלוש תשובות קצרות יכולות להסתיר שלושה אנשים שונים מאוד. בוט שעונה למילים ולא לאדם מאבד אותם.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>2 · הסוכן</b>0:20–0:35</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>לוחצים <b>Ask Rovo</b>, אחר כך <b>Rovo ˅</b>, ובוחרים <b>BEZEN Reply Reader</b>. רואים את מסך הפתיחה שלו.</p></div>
+      <div class="vo"><p class="en">BEZEN Reply Reader is a Rovo agent built on Forge. It reads the customer's reply on a Jira Service Management request, and says what they are protecting, what not to do now, and whether a bot or a human should answer.</p>
+        <p class="tr">BEZEN Reply Reader הוא סוכן Rovo שבנוי על Forge. הוא קורא את התשובה של הלקוח בבקשה ב-Jira Service Management, ואומר על מה הלקוח מגן, מה אסור לעשות עכשיו, והאם בוט או בן אדם צריך לענות.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>3 · פרטיות</b>0:35–1:15</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>פותחים את <b>CLSD-6</b> ומראים את התיאור. ב-Rovo מקלידים <code>Read the customer's latest reply on CLSD-6</code> ומחכים לקריאה.</p>
+        <p class="cue">לעצור רגע על השורות "Their words" ו-"Who answers: a human must".</p></div>
+      <div class="vo"><p class="en">Here a customer asks where we got their email. A normal triage sees a question and keeps selling. The agent reads intrusion: this person is protecting their privacy. It quotes their exact words, says stop the pitch, and routes the reply to a human.</p>
+        <p class="tr">כאן לקוח שואל מאיפה השגנו את המייל שלו. מיון רגיל רואה שאלה וממשיך למכור. הסוכן מזהה חדירה: האדם מגן על הפרטיות שלו. הוא מצטט את המילים המדויקות שלו, אומר לעצור את המכירה, ומעביר לבן אדם.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>4 · קריירה</b>1:15–1:45</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>שיחה חדשה (סמל העיפרון), ואחריה <code>Read the customer's latest reply on CLSD-7</code>.</p>
+        <p class="cue">להדגיש את "Protecting: their internal reputation".</p></div>
+      <div class="vo"><p class="en">This one sounds like a question about timelines. The agent sees someone who championed the deal and is afraid of their boss. The right answer lowers their personal risk: a clear timeline and a fallback plan.</p>
+        <p class="tr">זו נשמעת כמו שאלה על לוחות זמנים. הסוכן רואה מישהו שדחף לעסקה ופוחד מהבוס שלו. התשובה הנכונה מורידה ממנו את הסיכון האישי: לוח זמנים ברור ותוכנית גיבוי.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>5 · כן פשוט</b>1:45–2:05</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>שיחה חדשה, ואחריה <code>Read the customer's latest reply on CLSD-8</code>.</p>
+        <p class="cue">להדגיש את "Who answers: a bot may".</p></div>
+      <div class="vo"><p class="en">And here it does the opposite. A simple yes. There is nothing to protect except momentum, so a bot may answer with one concrete next step. The agent is not just cautious. It reads.</p>
+        <p class="tr">וכאן הוא עושה את ההפך. "כן" פשוט. אין על מה להגן חוץ מהתנופה, ולכן בוט רשאי לענות עם צעד הבא אחד ברור. הסוכן לא סתם זהיר. הוא קורא.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>6 · אמון</b>2:05–2:45</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>בבקשה CLSD-6 פותחים את הפאנל <b>BEZEN Reply Reader</b> (המשולש הכחול מתחת לכותרת). מראים את התווית <b>critic: pass</b>, ואז לוחצים <b>Confirm reading</b>, והתווית הופכת ל-<b>confirmed</b>.</p>
+        <p class="cue">לא חובה: שנייה של VS Code עם <code>npm test</code> ו-6 בדיקות שעוברות.</p></div>
+      <div class="vo"><p class="en">Models invent quotes, so this agent never grades itself. Every reading goes to a critic written in code, not a model. The critic fetches the reply from Jira on its own, and rejects any quote that is not there word for word, and any sensitive case marked for an automatic answer. One retry, then a human. Every decision is logged on the request, and the person on the team confirms or rejects it right here.</p>
+        <p class="tr">מודלים ממציאים ציטוטים, ולכן הסוכן הזה אף פעם לא בודק את עצמו. כל קריאה עוברת למבקר שכתוב בקוד, לא במודל. המבקר שולף בעצמו את התשובה מ-Jira, ופוסל כל ציטוט שלא מופיע בה מילה במילה, וכל מקרה רגיש שסומן לתשובה אוטומטית. ניסיון חוזר אחד, ואחריו בן אדם. כל החלטה נרשמת על הבקשה, ואיש הצוות מאשר או דוחה אותה כאן.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>7 · איך נבנה</b>2:45–3:10</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>הקובץ <code>manifest.yml</code> ב-VS Code: גוללים לאט על <code>rovo:agent</code>, על שתי ה-<code>action</code>, ועל <code>jira:issuePanel</code>.</p></div>
+      <div class="vo"><p class="en">It is built entirely on Forge: a Rovo agent with the BEZEN pattern layer as its prompt, two actions, get customer reply and check reading, an issue property as the ledger, and a UI Kit issue panel. The agent never posts to the customer itself.</p>
+        <p class="tr">הכול בנוי על Forge: סוכן Rovo ששכבת הדפוסים של BEZEN היא ההנחיה שלו, שתי פעולות (שליפת התשובה ובדיקת הקריאה), מאפיין של הבקשה שמשמש כרשומה, ופאנל UI Kit בבקשה. הסוכן אף פעם לא כותב ללקוח בעצמו.</p></div>
+    </article>
+
+    <article class="shot">
+      <div class="tc"><b>8 · סיום</b>3:10–3:25</div>
+      <div class="screen"><span class="label">על המסך</span>
+        <p>חוזרים לתור עם שלוש הבקשות, או לפאנל עם התווית confirmed. בשניות האחרונות מופיע שם הפרויקט.</p></div>
+      <div class="vo"><p class="en">Support teams lose good customers by giving the right words to the wrong person. BEZEN Reply Reader reads the person first, and proves it with their own words.</p>
+        <p class="tr">צוותי תמיכה מאבדים לקוחות טובים כשהם נותנים את המילים הנכונות לאדם הלא נכון. BEZEN Reply Reader קורא קודם את האדם, ומוכיח את זה במילים שלו עצמו.</p></div>
+    </article>
+  </div>
+
+  <section class="box">
+    <h2>אחרי ההקלטה</h2>
+    <ul>
+      <li>מעלים ליוטיוב כ<b>Public</b>, לא Unlisted.</li>
+      <li>שם הסרטון: <code>BEZEN Reply Reader – Codegeist 2026</code></li>
+      <li>שולחים לי את הקישור, ואני מכניס אותו לטופס ההגשה.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+const btn = document.getElementById('copy-all');
+btn.addEventListener('click', () => {
+  const text = [...document.querySelectorAll('#shots .shot')].map(s =>
+    s.querySelector('.tc b').textContent + '\n' + s.querySelector('.en').textContent).join('\n\n');
+  const done = () => { btn.textContent = 'הועתק'; setTimeout(() => btn.textContent = 'העתק את כל הקריינות', 1600); };
+  navigator.clipboard.writeText(text).then(done).catch(() => {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById('shots'));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+  });
+});
+</script>
