@@ -14,7 +14,8 @@ const issueKeyOf = (payload) => payload?.issueKey || payload?.context?.jira?.iss
 async function jira(path, init) {
   const res = await api.asApp().requestJira(path, init);
   if (!res.ok) throw new Error(`Jira ${res.status}: ${await res.text()}`);
-  return res.status === 204 ? null : res.json();
+  const text = await res.text(); // a new issue property comes back 201 with an empty body
+  return text ? JSON.parse(text) : null;
 }
 
 // The reply to read: the newest comment written by the reporter (the customer),
