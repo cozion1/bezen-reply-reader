@@ -29,9 +29,12 @@ export async function fetchReply(issueKey) {
     summary: issue.fields.summary,
     replyId: c ? `comment-${c.id}` : "description",
     author: c?.author?.displayName || issue.fields.reporter?.displayName || "unknown",
-    text: (c ? c.body : issue.fields.description) || "",
+    text: plain((c ? c.body : issue.fields.description) || ""),
   };
 }
+
+// API v2 returns wiki markup; strip bold/italic/monospace markers so quotes match what the customer typed.
+const plain = (s) => s.replace(/\{\{|\}\}/g, "").replace(/(^|[\s(])[*_]+(?=\S)|(?<=\S)[*_]+(?=[\s).,!?:;]|$)/g, "$1").trim();
 
 export async function readLedger(issueKey) {
   const res = await api.asApp().requestJira(route`/rest/api/2/issue/${issueKey}/properties/${LEDGER}`);
