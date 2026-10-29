@@ -4,7 +4,6 @@
   "description": "BEZEN Reply Reader as a Rovo agent for Jira Service Management, with a code critic and a reviewed ledger on each request.",
   "private": true,
   "license": "Apache-2.0",
-  "type": "module",
   "scripts": {
     "test": "node --test test/*.test.js"
   },
