@@ -4,6 +4,34 @@ A Rovo agent that reads a customer's reply on a request before anyone answers it
 what the customer is protecting, the exact words that show it, what must not be done now,
 whether a bot or a human should answer, and the next message.
 
+**Demo video (4:26, Hebrew with full English subtitles):** https://www.youtube.com/watch?v=Phelhc1P0_s
+
+**6 critic tests pass** · **3 replies, 3 different correct decisions** on a live Jira Service Management site · **runs only on Forge**, no external servers or keys · **every quote checked by code, not by the model**
+
+## What it catches
+
+Verified end to end on a demo Jira Service Management site with Rovo:
+
+| Request | The customer's reply | A normal bot | BEZEN Reply Reader |
+|---|---|---|---|
+| CLSD-6 | *"Where did you get my email address? I never signed up for anything from you. Take me off your list"* | Sees a question, answers it, keeps selling | **Protecting:** their privacy. **Do not:** pitch. **Who answers:** a human must |
+| CLSD-7 | A customer asks when it will be ready | Sends a timeline | **Protecting:** their standing with their boss, after convincing management to buy. **Next message:** a clear timeline *and* a backup plan. **Who answers:** a human must |
+| CLSD-8 | *"Sounds good, send over the NDA and we'll sign it this week"* | Answers | **Nothing to guard,** the customer is ready. **Who answers:** a bot may, right away |
+
+It does not send everything to a human. Only what needs one.
+
+## The loop
+
+```mermaid
+flowchart LR
+    A[Rovo agent<br/>BEZEN Reply Reader] --> B[Action: get-customer-reply<br/>fetches the reply from Jira itself]
+    B --> C[Reading: protecting, their words,<br/>do not, who answers, next message]
+    C --> D{Action: check-reading<br/>critic in plain code}
+    D -- quote is word for word,<br/>sensitive case not auto --> E[Logged on the request<br/>panel: Confirm / Wrong]
+    D -- rejected once --> A
+    D -- rejected twice --> F[Goes to a human,<br/>no message]
+```
+
 Built for Codegeist 2026 (category: Apps for Business Teams). It is a rebuild on Forge of
 [the original BEZEN Reply Reader](../README.md), which read sales replies from a CRM.
 
